@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "name": "azure-storage-account-blob"
+  },
+  "type": "object",
+  "title": "Azure Blob Storage Account",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "type": "object",
+          "required": [
+            "ari",
+            "connection_string"
+          ],
+          "properties": {
+            "ari": {
+              "$ref": "https://github.com/massdriver-cloud/artifact-definitions/raw/main/definitions/types/azure-resource-id.json"
+            },
+            "connection_string": {
+              "$ref": "../types/azure-storage-account-connection-string.json"
+            }
+          }
+        },
+        "authentication": {
+          "title": "Authentication configuration",
+          "type": "object",
+          "required": [
+            "primary_access_key"
+          ],
+          "properties": {
+            "primary_access_key": {
+              "title": "Primary Access Key",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "azure": {
+          "$ref": "https://github.com/massdriver-cloud/artifact-definitions/raw/main/definitions/specs/azure.json"
+        }
+      }
+    }
+  }
+}

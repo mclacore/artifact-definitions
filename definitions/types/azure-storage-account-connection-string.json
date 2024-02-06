@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Azure Storage Account Connection String",
+  "description": "Azure Storage Account connection string authentication",
+  "additionalProperties": false,
+  "examples": [
+    "DefaultEndpointsProtocol=https;AccountName=example;AccountKey=example;EndpointSuffix=core.windows.net"
+  ],
+  "type": "string"
+}
