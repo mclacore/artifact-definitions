@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
-    "access": "public",
+    "access": "private",
     "name": "azure-storage-account-blob"
   },
   "type": "object",
@@ -32,7 +32,7 @@
               "$ref": "https://github.com/massdriver-cloud/artifact-definitions/raw/main/definitions/types/azure-resource-id.json"
             },
             "connection_string": {
-              "$ref": "../types/azure-storage-account-connection-string.json"
+              "$ref": "../artifact-definitions/definitions/types/azure-storage-account-connection-string.json"
             }
           }
         },
@@ -56,7 +56,12 @@
       "type": "object",
       "properties": {
         "azure": {
-          "$ref": "https://github.com/massdriver-cloud/artifact-definitions/raw/main/definitions/specs/azure.json"
+          "properties": {
+            "region": {
+              "type": "string",
+              "title": "Azure region"
+            }
+          }
         }
       }
     }
