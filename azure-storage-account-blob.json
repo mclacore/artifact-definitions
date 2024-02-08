@@ -29,10 +29,25 @@
           ],
           "properties": {
             "ari": {
-              "$ref": "https://github.com/massdriver-cloud/artifact-definitions/raw/main/definitions/types/azure-resource-id.json"
+              "type": "string",
+              "title": "Azure Resource ID",
+              "description": "Azure Resource ID",
+              "examples": [
+                "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
+              ],
+              "pattern": "^\/subscriptions\/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\/resource(g|G)roups\/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]\/providers\/Microsoft\\.[a-zA-Z]+\/[a-zA-Z]+(?:\/[a-zA-Z0-9-_.()]+)+$",
+              "message": {
+                "pattern": "Must be a valid Azure Resource ID"
+              }
             },
             "connection_string": {
-              "$ref": "../artifact-definitions/definitions/types/azure-storage-account-connection-string.json"
+              "title": "Azure Storage Account Connection String",
+              "description": "Azure Storage Account connection string authentication",
+              "additionalProperties": false,
+              "examples": [
+                "DefaultEndpointsProtocol=https;AccountName=example;AccountKey=example;EndpointSuffix=core.windows.net"
+              ],
+              "type": "string"
             }
           }
         },
@@ -59,7 +74,8 @@
           "properties": {
             "region": {
               "type": "string",
-              "title": "Azure region"
+              "title": "Azure Region",
+              "description": "Select the Azure region you'd like to provision your resources in."
             }
           }
         }
