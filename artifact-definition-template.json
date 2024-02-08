@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "private",
+    "name": "artifact-definition-name"
+  },
+  "type": "object",
+  "title": "Artifact Definition Name",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "properties": {}
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {}
+    }
+  }
+}
